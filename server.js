@@ -60,9 +60,6 @@ function show_user(username, password, callback)
 
 /* Performs a login operation. */
 app.post("/api/login", (req, res) => {
-	console.log("req  body is: ", req.body)
-	if (!req.body || !req.body.username || !req.body.password)
-		return res.json({success: false, msg: "no username or pw sent in post body"})
 	show_user(req.body.username, req.body.pw, result =>  res.json(result));
 });
 
